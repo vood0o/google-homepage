@@ -1,3 +1,5 @@
 This is my Google Homepage project.
 
-Skills needed: HTML, CSS
+Skills required: HTML, CSS
+
+V
