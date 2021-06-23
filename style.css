@@ -2,169 +2,318 @@
   font-size: 10px;
 }
 
-html,
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
 body,
-div,
-span,
-applet,
-object,
-iframe,
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
 p,
+figure,
 blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
 dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+dd {
   margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  font-family: Arial, sans-serif;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
   display: block;
 }
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap*/
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #4285f4;
+}
+
 body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-#main-menu > ul,
-#rightMenu > ul {
-  display: flex;
-  justify-content: flex-end;
   font-size: 1.3rem;
+  font-family: Arial, sans-serif;
 }
 
-#main-menu > ul > li,
-#rightMenu > ul > li {
-  margin: 2rem 0.75rem;
+section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+header {
+  justify-self: stretch;
+  color: #70757a;
+}
+
+#header-menu > ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#header-menu > ul > li {
+  margin: 1rem 0.75rem;
+}
+
+#header-menu > ul > li.li-with-icon {
+  margin-bottom: 0.5rem;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  justify-self: stretch;
+  align-self: center;
+  padding: 1rem;
 }
 
-p,
-#leftMenu > ul {
-  display: flex;
-  font-size: 1.3rem;
+.google-logo {
+  display: block;
+  margin: 1.5rem auto;
 }
 
-figure,
-form,
-label,
-input,
-button {
+#search-input {
+  width: 100%;
+  border-radius: 10rem;
+  border: 1px solid #dfe1e5;
+  padding: 1.2rem;
+  padding-left: 4rem;
+  background:url(elements/search_gray2_24dp.svg) no-repeat 1.2rem 1rem;
+}
+
+#search-input:hover {
+  border: 1px solid #dfe1e5;
+  cursor: text;
+  box-shadow: 0rem 0.1rem 0.4rem #dfe1e5;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#button-gs,
+#button-fl {
+  color: #3c4043;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#button-gs:hover,
+#button-fl:hover {
+  border: 1px solid #dadada;
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.2rem #dadada;
+}
+
+main p {
+  font-size: 1.1rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+main p a {
+  color: #1967d2;
+  margin: 0 0.5rem;
+}
+
+p.country {
+  text-align: left;
+  padding: 0.675rem;
+  color: #70757a;
+  background-color: #f2f2f2;
+}
+
+/*FOOTER LEFT*/
+#footer-left {
+  justify-self: stretch;
+  background-color: #f2f2f2;
+  order: 1;
+}
+
+#footer-left-menu > ul {
   display: flex;
   justify-content: center;
 }
 
-#googleImg {
-  width: 300px;
+#footer-left-menu > ul > li {
+  margin: 1rem 0.75rem 2rem 0.75rem;
+  color: #70757a;
 }
 
-.responsive {
-  width: 100%;
-  height: auto;
+/*FOOTER RIGHT*/
+#footer-right {
+  justify-self: stretch;
+  background-color: #f2f2f2;
+  border-top: 1px solid #dadce0;
+  order: 0;
+}
+
+#footer-right-menu > ul {
+  display: flex;
+  justify-content: center;
+}
+
+#footer-right-menu > ul > li {
+  margin: 2rem 0.75rem 0rem 0.75rem;
+  color: #70757a;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+/**************************************************/
+/**************************************************/
+/**************************************************/
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+  section {
+    grid-template-columns: 50% 50%;
+  }
+  
+  header {
+    justify-content: end;
+    grid-column: 1 / span 2;
+  }
+  
+  main {
+    grid-column: 1 / span 2;
+  }
+
+  #search-form {
+    width: 56rem;
+    margin: 2rem auto;
+  }
+
+  #search-input {
+    padding: 1.2rem;
+    padding-left: 4rem;
+    background:url(elements/search_gray2_24dp.svg) no-repeat 1.2rem 1rem;
+  }
+  
+  main p {
+    font-size: 1.3rem;
+    margin: 2rem;
+    text-align: center;
+  }
+  
+  p.country {
+    grid-column: 1 / span 2;
+    padding: 1.2rem;
+    background-color: #f2f2f2;
+  }
+  
+  /*FOOTER LEFT*/
+  #footer-left {
+    grid-column: 1 / span 1;
+    justify-self: stretch;
+    border-top: 1px solid #dadce0;
+    order: 0;
+  }
+  
+  #footer-left-menu > ul {
+    justify-content: flex-start;
+  }
+  
+  #footer-left-menu > ul > li {
+    margin: 1.3rem;
+  }
+  
+  /*FOOTER RIGHT*/
+  #footer-right {
+    grid-column: 2 / span 1;
+    justify-self: stretch;
+    background-color: #f2f2f2;
+    border-top: 1px solid #dadce0;
+    order: 0;
+  }
+  
+  #footer-right-menu > ul {
+    justify-content: flex-end;
+  }
+  
+  #footer-right-menu > ul > li {
+    margin: 1.3rem;
+    color: #70757a;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }
