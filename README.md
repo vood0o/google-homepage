@@ -1,5 +1,7 @@
 This is my Google Homepage project.
 
-Skills required: HTML, CSS
+You can see it in action here: https://vood0o.github.io/google-homepage/
+
+Required: HTML, CSS.
 
 V
